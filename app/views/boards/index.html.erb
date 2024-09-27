@@ -1,5 +1,12 @@
 <div>
   <div>
+
+  <% flash.each { |type, msg| %>
+    <div style="color: <%= type == "notice" ? "green" : ""%>">
+      <%= msg %>
+    </div>
+  <% } %>
+
     <h1>
       All boards
     </h1>
