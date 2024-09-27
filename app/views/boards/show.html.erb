@@ -30,3 +30,49 @@
 </form>
 
 <hr>
+
+<h2>Active posts</h2>
+
+<table border="1">
+  <tbody>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Posted on</th>
+      <th>Expires on</th>
+    </tr>
+
+    <% @the_board.posts.active.each { |post| %>
+      <tr>
+        <td><%= post.title %></td>
+        <td><%= post.body %></td>
+        <td><%= post.created_at.strftime("%b %e, %Y") %></td>
+        <td><%= post.expires_on.strftime("%b %e, %Y") %></td>
+      </tr>
+    <% } %>
+
+  </tbody>
+</table>
+
+<h2>Expired posts</h2>
+
+<table border="1">
+  <tbody>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Posted on</th>
+      <th>Expires on</th>
+    </tr>
+
+    <% @the_board.posts.expired.each { |post| %>
+      <tr>
+        <td><%= post.title %></td>
+        <td><%= post.body %></td>
+        <td><%= post.created_at.strftime("%b %e, %Y") %></td>
+        <td><%= post.expires_on.strftime("%b %e, %Y") %></td>
+      </tr>
+    <% } %>
+
+  </tbody>
+</table>
