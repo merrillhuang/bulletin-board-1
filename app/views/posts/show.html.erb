@@ -1,5 +1,11 @@
 <div>
   <div>
+    <% flash.each { |type, msg| %>
+    <div style="color: <%= type == "notice" ? "green" : ""%>">
+      <%= msg %>
+    </div>
+  <% } %>
+
     <h1>
       Post #<%= @the_post.id %> details
     </h1>
