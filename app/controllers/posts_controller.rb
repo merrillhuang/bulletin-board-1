@@ -28,7 +28,7 @@ class PostsController < ApplicationController
       the_post.save
       redirect_to("/boards/#{the_post.board_id}", { :notice => "Post created successfully." })
     else
-      redirect_to("/posts", { :alert => the_post.errors.full_messages.to_sentence })
+      redirect_to("/posts", { :alert => "Failed to create post: " + the_post.errors.full_messages.to_sentence })
     end
   end
 
@@ -45,7 +45,7 @@ class PostsController < ApplicationController
       the_post.save
       redirect_to("/posts/#{the_post.id}", { :notice => "Post updated successfully."} )
     else
-      redirect_to("/posts/#{the_post.id}", { :alert => the_post.errors.full_messages.to_sentence })
+      redirect_to("/posts/#{the_post.id}", { :alert => "Failed to update post: " + the_post.errors.full_messages.to_sentence })
     end
   end
 
