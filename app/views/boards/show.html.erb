@@ -42,7 +42,7 @@
       <th>Expires on</th>
     </tr>
 
-    <% @the_board.posts.active.each { |post| %>
+    <% @the_board.posts.active.order("expires_on asc").each { |post| %>
       <tr>
         <td><%= post.title %></td>
         <td><%= post.body %></td>

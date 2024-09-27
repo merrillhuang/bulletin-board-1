@@ -11,6 +11,8 @@
 #  board_id   :integer
 #
 class Post < ApplicationRecord
+  validates(:body, {presence: "true"})
+
   scope(:expired, -> { where("expires_on < ?", DateTime.now) })
   scope(:active, -> { where("expires_on > ?", DateTime.now) })
 end
