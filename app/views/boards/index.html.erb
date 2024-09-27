@@ -2,7 +2,7 @@
   <div>
 
   <% flash.each { |type, msg| %>
-    <div style="color: <%= type == "notice" ? "green" : ""%>">
+    <div style="color: <%= type == "notice" ? "green" : "red"%>">
       <%= msg %>
     </div>
   <% } %>
